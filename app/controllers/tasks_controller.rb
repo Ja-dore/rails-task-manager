@@ -16,7 +16,27 @@ class TasksController < ApplicationController
     @task = Task.new(params_tasks)
     @task.save
     # no need to create a view for create if you redirect!
-    redirect_to tasks_path(@task)
+    redirect_to task_path(@task)
+    # redirect_to '/tasks' is similar, but the readability is much bigger
+    # the easiness to adapt afterwards aswell
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(params_tasks)
+
+    redirect_to task_path(@task)
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+
+    redirect_to tasks_path
   end
 
   private
