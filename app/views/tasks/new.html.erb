@@ -1,9 +1,26 @@
+<div>
 <%= form_for(@task) do |t| %>
+  <div class='m-2'>
+  <div>
   <%= t.label :title %>
+  </div>
+  <div>
   <%= t.text_field :title %>
+  </div>
+  </div>
+  <div class='m-2'>
+  <div>
   <%= t.label :details %>
+  </div>
+  <div>
   <%= t.text_field :details %>
-  <%= t.submit %>
+  </div>
+  </div>
+  <div class='m-2'>
+  <%= t.submit 'Create taks', :class => 'btn btn-primary' %>
+  </div>
 <% end %>
-
+</div>
+<div class='m-2'>
 <%= link_to "back to list", tasks_path%>
+</div>

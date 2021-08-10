@@ -1,5 +1,20 @@
-<h1><%= @task.title %> </h1>
-<p><%= @task.details %></p>
+<div class='p-2 d-flex align-items-end'>
+  <div>
+    <h1><%= @task.title %> </h1>
+  </div>
+  <div class='ml-auto p-2' >
+    <%= link_to edit_path(@task) do%>
+    <i class="far fa-edit"> Edit task</i>
+    <%end%>
+  </div>
+</div>
 
-<%= link_to "Back to list", '/tasks' %>
-<%= link_to "Edit task", edit_path(@task) %>
+<div id='description'>
+<p class='p-2'><%= @task.details %></p>
+</div>
+
+<div class='m-2'>
+<%= link_to '/tasks' do %>
+  <i class="fas fa-redo-alt">back to list</i>
+<% end %>
+</div>

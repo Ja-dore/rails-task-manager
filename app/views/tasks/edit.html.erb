@@ -3,8 +3,10 @@
   <%= t.text_field :title %>
   <%= t.label :details %>
   <%= t.text_field :details %>
-  <%= t.check_box :completed , {} , true, false %>
-  <%= t.label :completed, "completed" %>
+  <div class='form-group'>
+    <%=   t.label :completed, "completed" %>
+    <%= t.check_box :completed , {} , true, false %>
+  </div>
   <%= t.submit %>
 <% end %>
 
