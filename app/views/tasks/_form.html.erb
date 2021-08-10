@@ -1,0 +1,33 @@
+<div>
+<%= form_for(@task) do |t| %>
+  <div class='m-2'>
+    <div>
+      <%= t.label :title %>
+    </div>
+    <div>
+      <%= t.text_field :title %>
+    </div>
+  </div>
+  <div class='m-2'>
+    <div>
+      <%= t.label :details %>
+    </div>
+    <div>
+      <%= t.text_field :details %>
+    </div>
+  </div>
+  <div class='m-2 from-group' style="<%= @task.new_record? == true ? 'display:none' : ''%>">
+    <div class ='form-group'>
+      <%=   t.label :completed, "completed" %>
+      <%= t.check_box :completed , {} , true, false %>
+    </div>
+  </div>
+  <div class='m-2'>
+  <%= t.submit   @task.new_record? == true ? 'Create task' : 'Update task', :class => 'btn btn-primary' %>
+  </div>
+<% end %>
+</div>
+
+<div class='m-2'>
+<%= link_to "back to list", tasks_path%>
+</div>
